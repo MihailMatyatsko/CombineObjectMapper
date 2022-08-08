@@ -1,0 +1,6 @@
+module Pods_CombineObjectMapper {
+  umbrella header "Pods-CombineObjectMapper-umbrella.h"
+
+  export *
+  module * { export * }
+}
