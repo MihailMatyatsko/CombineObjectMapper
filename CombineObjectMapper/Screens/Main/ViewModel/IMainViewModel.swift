@@ -8,5 +8,8 @@
 import Foundation
 
 protocol IMainViewModel {
-    var networkWorker: NetworkWorker { get }
+    var usersPublisher: Published<[User]>.Publisher { get }
+    var users: [User] { get }
+    
+    func viewDidLoad()
 }
