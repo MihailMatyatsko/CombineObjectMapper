@@ -14,7 +14,7 @@ final class User: Mappable {
     var name: String?
     var username: String?
     var email: String?
-    var adress: Adress?
+    var adress: Adress!
     
     init?(map: Map) { }
     

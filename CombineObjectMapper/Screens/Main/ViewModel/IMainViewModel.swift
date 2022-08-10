@@ -8,8 +8,9 @@
 import Foundation
 
 protocol IMainViewModel {
-    var usersPublisher: Published<[User]>.Publisher { get }
+    var dataSourcePublisher: Published<[UserCellViewModel]>.Publisher { get }
     var users: [User] { get }
+    var dataSource: [UserCellViewModel] { get }
     
     func viewDidLoad()
 }

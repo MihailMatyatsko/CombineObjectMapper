@@ -10,11 +10,12 @@ import Foundation
 
 final class MainViewModelImpl: BaseViewModel, IMainViewModel {
     
-    var usersPublisher: Published<[User]>.Publisher {
-        return $users
+    var dataSourcePublisher: Published<[UserCellViewModel]>.Publisher {
+        return $dataSource
     }
     
-    @Published var users: [User] = []
+    internal var users: [User] = []
+    @Published var dataSource: [UserCellViewModel] = []
     
     override init() {
         super.init()
@@ -39,8 +40,21 @@ final class MainViewModelImpl: BaseViewModel, IMainViewModel {
                 }
             } receiveValue: { [weak self] resultValue in
                 self?.users = resultValue
+                self?.generateViewModels(users: self?.users)
             }
             .store(in: &cancellable)
+    }
+    
+    private func generateViewModels(users: [User]?) {
+        guard let users = users else { return }
+        dataSource = users.map({ user -> UserCellViewModel in
+            return UserCellViewModelImpl(
+                userName: user.name ?? "",
+                nick: user.username ?? "",
+                email: user.email ?? "",
+                userAdress: user.adress
+            )
+        })
     }
     
 }

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UserTableViewCell" customModule="CombineObjectMapper" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="399" height="73"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="CxQ-S7-EsT">
+                    <rect key="frame" x="20" y="10" width="156.5" height="20"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CPX-St-nJ1">
+                            <rect key="frame" x="0.0" y="0.0" width="80" height="20"/>
+                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                            <color key="textColor" systemColor="systemRedColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NickName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lc4-L3-Tui">
+                            <rect key="frame" x="100" y="0.0" width="56.5" height="20"/>
+                            <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-BookIt" family="Bodoni 72 Oldstyle" pointSize="14"/>
+                            <color key="textColor" systemColor="systemGray2Color"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="mwH-f1-mPf">
+                    <rect key="frame" x="20" y="35" width="100.5" height="33"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VPa-Vh-7yE">
+                            <rect key="frame" x="0.0" y="0.0" width="33.5" height="33"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Street" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ws-pB-dDl">
+                                    <rect key="frame" x="0.0" y="0.0" width="33.5" height="14"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="14" id="bOh-fQ-VPf"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="13"/>
+                                    <color key="textColor" systemColor="systemIndigoColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suite" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rl6-KS-rU0">
+                                    <rect key="frame" x="0.0" y="19" width="33.5" height="14"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="14" id="cQp-LP-qf0"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SinhalaSangamMN" family="Sinhala Sangam MN" pointSize="13"/>
+                                    <color key="textColor" systemColor="systemIndigoColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZ3-BT-Amt">
+                            <rect key="frame" x="73.5" y="10" width="27" height="13.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="11"/>
+                            <color key="textColor" systemColor="systemGray4Color"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="mwH-f1-mPf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="1OD-0o-bWH"/>
+                <constraint firstItem="CxQ-S7-EsT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="F9V-7t-qll"/>
+                <constraint firstItem="CxQ-S7-EsT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="FIF-ei-3Kn"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="mwH-f1-mPf" secondAttribute="bottom" constant="5" id="G81-xU-KEK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mwH-f1-mPf" secondAttribute="trailing" constant="10" id="KQz-Lg-ywu"/>
+                <constraint firstItem="mwH-f1-mPf" firstAttribute="top" secondItem="CxQ-S7-EsT" secondAttribute="bottom" constant="5" id="Q5R-zi-dUh"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CxQ-S7-EsT" secondAttribute="trailing" constant="10" id="nbW-pp-XWL"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="userEmailLabel" destination="KZ3-BT-Amt" id="oj3-UD-QXI"/>
+                <outlet property="userNameLabel" destination="CPX-St-nJ1" id="gVg-0Q-gl4"/>
+                <outlet property="userNickNameLabel" destination="lc4-L3-Tui" id="lmd-kZ-4de"/>
+                <outlet property="userStreetLabel" destination="7ws-pB-dDl" id="5aM-cJ-8CE"/>
+                <outlet property="userSuiteLable" destination="Rl6-KS-rU0" id="53f-sg-tTP"/>
+            </connections>
+            <point key="canvasLocation" x="126.81159420289856" y="-161.71875"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
