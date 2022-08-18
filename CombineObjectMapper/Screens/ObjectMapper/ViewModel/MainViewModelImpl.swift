@@ -22,7 +22,7 @@ final class MainViewModelImpl: BaseViewModel, IMainViewModel {
     }
     
     //MARK: - Public
-    func viewDidLoad() {
+    func viewWillAppear() {
         performUserDataFetch()
     }
     

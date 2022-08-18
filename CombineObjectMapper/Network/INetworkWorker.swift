@@ -10,4 +10,5 @@ import Combine
 
 protocol INetworkWorker {
     func getUsersData() -> Future<[User], NetworkErrors>
+    func getPost(completion: @escaping ([Post]) -> () )
 }

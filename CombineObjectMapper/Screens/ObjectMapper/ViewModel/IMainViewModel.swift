@@ -12,5 +12,5 @@ protocol IMainViewModel {
     var users: [User] { get }
     var dataSource: [UserCellViewModel] { get }
     
-    func viewDidLoad()
+    func viewWillAppear()
 }

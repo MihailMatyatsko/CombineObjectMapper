@@ -1,14 +1,14 @@
 //
-//  MainViewController.swift
+//  CombineViewController.swift
 //  CombineObjectMapper
 //
-//  Created by Mihail Matyatsko on 08.08.2022.
+//  Created by Matyatsko Mihail on 18.08.2022.
 //
 
 import UIKit
 import Combine
 
-class MainViewController: UIViewController {
+final class CombineViewController: UIViewController {
     
     private var tableView: UITableView = {
         let tableView = UITableView()
@@ -21,8 +21,8 @@ class MainViewController: UIViewController {
         return tableView
     }()
     
-    var viewModel: IMainViewModel!
-    private var reuseIdentifier: String = "cell"
+    var viewModel: ICombineViewModel!
+    private var reuseIdentifier: String = "postCell"
     private var cancellable: Set<AnyCancellable> = []
     
     override func viewDidLoad() {
@@ -31,13 +31,18 @@ class MainViewController: UIViewController {
         setupUI()
         addTableViewOnScreen()
         configureTableView()
-        viewModel.viewDidLoad()
         setupObservers()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        viewModel.viewWillAppear()
     }
     
     //MARK: - Private
     private func setupUI() {
-        view.backgroundColor = UIColor.gray.withAlphaComponent(0.6)
+        view.backgroundColor = UIColor.magenta.withAlphaComponent(0.3)
     }
     
     private func configureTableView() {
@@ -45,15 +50,16 @@ class MainViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.register(
-            UINib(nibName: String(describing: UserTableViewCell.self), bundle: nil),
+            UINib(nibName: String(describing: PostTableViewCell.self), bundle: nil),
             forCellReuseIdentifier: reuseIdentifier
         )
     }
     
     private func setupObservers() {
         viewModel.dataSourcePublisher
+            .subscribe(on: DispatchQueue.global(qos: .background))
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] users in
+            .sink { [weak self] _ in
                 self?.tableView.reloadData()
             }
             .store(in: &cancellable)
@@ -73,16 +79,16 @@ class MainViewController: UIViewController {
     
 }
 
-extension MainViewController: UITableViewDelegate { }
+extension CombineViewController: UITableViewDelegate { }
 
-extension MainViewController: UITableViewDataSource {
+extension CombineViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? UserTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? PostTableViewCell else {
             return UITableViewCell()
         }
         cell.setup(with: viewModel.dataSource[indexPath.row])
