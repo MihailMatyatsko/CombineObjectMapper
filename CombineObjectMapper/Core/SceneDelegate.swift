@@ -21,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.makeKeyAndVisible()
     }
     
+    //MARK: - TabBarViewController
     private func createRootTabBarController() -> UITabBarController {
         let mainViewController = MainViewController()
         mainViewController.viewModel = MainViewModelImpl()
@@ -34,23 +35,30 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         combineViewController.viewModel = CombineViewModelImpl()
         combineViewController.tabBarItem = createTabBarItem(
             title: "Combine",
-            image: UIImage(systemName: "suit.club.fill"),
+            image: UIImage(systemName: "snow"),
             tag: 1
         )
         
-        let tabBar = UITabBarController()
-        tabBar.setViewControllers([mainViewController, combineViewController], animated: true)
+        let tabBarVC = UITabBarController()
+        tabBarVC.tabBar.backgroundImage = UIImage()
+        tabBarVC.tabBar.shadowImage = UIImage()
         
-        return tabBar
+        let appearance = UITabBarAppearance()
+        appearance.configureWithDefaultBackground()
+        appearance.backgroundColor = UIColor.darkGray
+        tabBarVC.tabBar.standardAppearance = appearance
+        tabBarVC.tabBar.tintColor = UIColor.orange
+        
+        if #available(iOS 15.0, *) {
+            tabBarVC.tabBar.scrollEdgeAppearance = tabBarVC.tabBar.standardAppearance
+        }
+        tabBarVC.setViewControllers([mainViewController, combineViewController], animated: true)
+        
+        return tabBarVC
     }
             
     private func createTabBarItem(title: String, image: UIImage?, tag: Int) -> UITabBarItem {
         let item = UITabBarItem(title: title, image: image, tag: tag)
-        if #available(iOS 15, *) {
-            item.scrollEdgeAppearance = .none
-        }
-        item.image?.withRenderingMode(.alwaysTemplate)
-        item.image?.withTintColor(.orange)
         
         return item
     }
