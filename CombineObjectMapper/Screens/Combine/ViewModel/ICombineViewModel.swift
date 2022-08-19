@@ -13,4 +13,5 @@ protocol ICombineViewModel {
     var dataSource: [PostTableViewModel] { get }
     
     func viewWillAppear()
+    func fetchAlbums()
 }

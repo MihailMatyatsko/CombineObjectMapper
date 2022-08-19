@@ -40,6 +40,12 @@ final class CombineViewController: UIViewController {
         viewModel.viewWillAppear()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewModel.fetchAlbums()
+    }
+    
     //MARK: - Private
     private func setupUI() {
         view.backgroundColor = UIColor.magenta.withAlphaComponent(0.3)

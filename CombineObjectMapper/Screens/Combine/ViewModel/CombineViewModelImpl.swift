@@ -20,6 +20,19 @@ final class CombineViewModelImpl: BaseViewModel, ICombineViewModel {
         fetch()
     }
     
+    func fetchAlbums() {
+        networkWorker.fetchAlbums { result in
+            switch result {
+            case .success(let albums):
+                albums.forEach { album in
+                    print("Album title: \(album.title), id \(album.id)")
+                }
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+            }
+        }
+    }
+    
     //MARK: - Private
     private func fetch() {
         networkWorker.getPost { [weak self] posts in

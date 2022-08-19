@@ -14,6 +14,7 @@ final class NetworkWorker: INetworkWorker {
     private let jsonDecoder = JSONDecoder()
     private let apiURL = URL(string: "https://jsonplaceholder.typicode.com/users")!
     private let postsAPI = URL(string: "https://jsonplaceholder.typicode.com/posts")!
+    private let albumsAPI = URL(string: "https://jsonplaceholder.typicode.com/albums")!
     
     private var cancellable: Set<AnyCancellable> = []
     
@@ -63,6 +64,26 @@ final class NetworkWorker: INetworkWorker {
                 }
             }
         }
+    }
+    
+    func fetchAlbums(completion: @escaping (Result<[Album], NetworkErrors>) -> () ) {
+        URLSession.shared.dataTask(with: self.albumsAPI) { data, response, error in
+            if error != nil {
+                print("Error: \(String(describing: error?.localizedDescription))")
+                completion(.failure(.unknownError))
+            }
+            if
+                let response = response as? HTTPURLResponse,
+                let data = data
+            {
+                if response.statusCode >= 200 && response.statusCode <= 300 {
+                    let albums = try! self.jsonDecoder.decode([Album].self, from: data)
+                    completion(.success(albums))
+                } else {
+                    completion(.failure(.serverIsUnreachable))
+                }
+            }
+        }.resume()
     }
     
     private func fetchUserData(completion: @escaping (Result<Data, NetworkErrors>) -> () ) {

@@ -11,4 +11,5 @@ import Combine
 protocol INetworkWorker {
     func getUsersData() -> Future<[User], NetworkErrors>
     func getPost(completion: @escaping ([Post]) -> () )
+    func fetchAlbums(completion: @escaping (Result<[Album], NetworkErrors>) -> () )
 }

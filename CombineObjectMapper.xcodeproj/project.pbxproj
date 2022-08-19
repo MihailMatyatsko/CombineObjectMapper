@@ -31,6 +31,7 @@
 		8420F22E28ADA5140054B1D2 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8420F22C28ADA5140054B1D2 /* PostTableViewCell.xib */; };
 		8420F23028ADA52E0054B1D2 /* PostTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8420F22F28ADA52E0054B1D2 /* PostTableViewModel.swift */; };
 		845BD54928AD991F007889EB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BD54828AD991F007889EB /* Post.swift */; };
+		846AE0E728AFAE2700189296 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846AE0E628AFAE2700189296 /* Album.swift */; };
 		87C19FE689B0139FA723E681 /* libPods-CombineObjectMapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 747F93537BBBCE260E8B6D59 /* libPods-CombineObjectMapper.a */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		8420F22C28ADA5140054B1D2 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		8420F22F28ADA52E0054B1D2 /* PostTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewModel.swift; sourceTree = "<group>"; };
 		845BD54828AD991F007889EB /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		846AE0E628AFAE2700189296 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		9C64FB206E2FF78EAFC7E69C /* Pods-CombineObjectMapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CombineObjectMapper.release.xcconfig"; path = "Target Support Files/Pods-CombineObjectMapper/Pods-CombineObjectMapper.release.xcconfig"; sourceTree = "<group>"; };
 		C6F53529386468D3A6DB40A0 /* Pods-CombineObjectMapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CombineObjectMapper.debug.xcconfig"; path = "Target Support Files/Pods-CombineObjectMapper/Pods-CombineObjectMapper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +150,7 @@
 				6B1A50D128A14C6100E249B7 /* Adress.swift */,
 				845BD54828AD991F007889EB /* Post.swift */,
 				6B1A50D528A14F4200E249B7 /* NetworkErrors.swift */,
+				846AE0E628AFAE2700189296 /* Album.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -344,6 +347,7 @@
 				8403351728A1B386000E8F0C /* UserTableViewCell.swift in Sources */,
 				8403351528A1B330000E8F0C /* UserCellViewModel.swift in Sources */,
 				8420F22528ADA3710054B1D2 /* ICombineViewModel.swift in Sources */,
+				846AE0E728AFAE2700189296 /* Album.swift in Sources */,
 				8420F23028ADA52E0054B1D2 /* PostTableViewModel.swift in Sources */,
 				8420F22D28ADA5140054B1D2 /* PostTableViewCell.swift in Sources */,
 				6B1A50CE28A1112400E249B7 /* IMainViewModel.swift in Sources */,
