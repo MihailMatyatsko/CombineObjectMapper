@@ -59,7 +59,11 @@ final class MainViewController: UIViewController {
         viewModel.dataSourcePublisher
             .receive(on: DispatchQueue.main)
             .sink { [weak self] users in
-                self?.tableView.reloadData()
+                guard let self = self else { return }
+                if !self.viewModel.users.isEmpty {
+                    print("User1: comapany name -> \(String(describing: self.viewModel.users[0].companyName))")
+                }
+                self.tableView.reloadData()
             }
             .store(in: &cancellable)
     }

@@ -15,6 +15,7 @@ final class User: Mappable {
     var username: String?
     var email: String?
     var adress: Adress!
+    var companyName: String?
     
     init?(map: Map) { }
     
@@ -24,6 +25,7 @@ final class User: Mappable {
         username     <- map["username"]
         email        <- map["email"]
         adress       <- map["address"]
+        companyName  <- map["company.name"]
     }
     
 }

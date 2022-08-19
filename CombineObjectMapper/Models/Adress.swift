@@ -8,16 +8,16 @@
 import Foundation
 import ObjectMapper
 
-final class Adress: Mappable {
+final class Adress: ImmutableMappable {
     
-    var street: String?
-    var suite: String?
+    let street: String
+    let suite: String
+    let apsentField: Int?
     
-    init?(map: Map) { }
-    
-    func mapping(map: Map) {
-        street <- map["street"]
-        suite  <- map["suite"]
+    init(map: Map) throws {
+        street          = try map.value("street")
+        suite           = try map.value("suite")
+        apsentField     = try? map.value("field")
     }
     
 }
